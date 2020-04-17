@@ -28,7 +28,8 @@ func (a *App) Initialize() {
 //装载路由
 func (a *App) loadRoute() {
 	r := mux.NewRouter()
-	r.HandleFunc("/user/{id}", a.handlerRequest(handler.GetUser))
+	r.HandleFunc("/user/{id}", a.handlerRequest(handler.GetUser)).Methods(http.MethodGet)
+	r.HandleFunc("/user", a.handlerRequest(handler.CreateUser)).Methods(http.MethodPost)
 	a.Router = r
 }
 
