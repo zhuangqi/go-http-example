@@ -1,8 +1,8 @@
 package model
 
 type User struct {
-	Id       int
-	Username string
-	Password string
-	GmtCrate int64
+	Id       int    `json:"id"`
+	Username string `json:"username"`
+	Password string `json:"password"`
+	GmtCrate int64  `json:"gmt_create"`
 }
