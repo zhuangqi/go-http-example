@@ -1,8 +1,10 @@
 package model
 
+import "time"
+
 type User struct {
-	Id       int    `json:"id"`
-	Username string `json:"username"`
-	Password string `json:"password"`
-	GmtCrate int64  `json:"gmt_create"`
+	Id       int       `db:"id"json:"id"`
+	Username string    `db:"username"json:"username"`
+	Password string    `db:"password"json:"password"`
+	GmtCrate time.Time `db:"gmt_create"json:"gmt_create"`
 }

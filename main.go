@@ -2,11 +2,11 @@ package main
 
 import (
 	"go-http-example/app"
-	"log"
-	"net/http"
+	_ "go-http-example/app"
 )
 
 func main() {
-	http.Handle("/", app.LoadRoute())
-	log.Fatal(http.ListenAndServe(":8080", nil))
+	application := app.App{}
+	application.Initialize()
+	application.Run(":8080")
 }
